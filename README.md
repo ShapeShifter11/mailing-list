@@ -5,13 +5,13 @@
 when started, the program displays a menu of options from which the user can chose:
 
 ``` c
-    "1. Enter a name\n"
-    "2. Delete a name\n"
-    "3. List the file\n"
-    "4. Search\n"
-    "5. Save the file\n"
-    "6. Load the file\n"
-    "7. Quit\n" 
+    "1. Enter a name"
+    "2. Delete a name"
+    "3. List the file"
+    "4. Search"
+    "5. Save the file"
+    "6. Load the file"
+    "7. Quit" 
     
 ```
 - `enter a name` option creates a new antry and prompts the user to fill in the reqiered information.
