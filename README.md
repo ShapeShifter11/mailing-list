@@ -2,7 +2,7 @@
 
 ## mailing list routine using doubly linked lists
 
-when started the program displays a menu of options from which the user can chose 
+when started, the program displays a menu of options from which the user can chose:
 
 ``` c
     "1. Enter a name\n"
