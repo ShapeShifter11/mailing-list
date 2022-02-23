@@ -359,10 +359,10 @@ void load(void){
  */
 void delay(int second){
 
-int milsec = 1000 * second;
+    int milsec = 1000 * second;
 
-clock_t startTime = clock();
+    clock_t startTime = clock();
 
-while(clock() < (startTime + milsec));
+    while(clock() < (startTime + milsec));
 
 }
