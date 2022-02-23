@@ -1,10 +1,11 @@
 /*
- *  compleete mailing list using doubly linked list method 
+ *  creates a mailing list database using doubly linked list method
  */
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 
 struct address {
     char name [30];
@@ -21,7 +22,7 @@ struct address *last;
 struct address *find(char *);
 
 void enter(void), search(void), save(void);
-void load(void), list(void);
+void load(void), list(void), delay(int second);
 void mldelete(struct address **, struct address **);
 void dls_store(struct address *i, struct address **start, struct address **last);
 void inputs(char *, char *, int), display(struct address *);
@@ -101,10 +102,14 @@ void enter(void){
         if(!info->name[0]) break;
         inputs("Enter street: ", info->street, 40);
         inputs("Enter city: ", info->city, 20);
-        inputs("Enter state: ", info->state, 3);
+        inputs("Enter state: ", info->state, 4);
         inputs("Enteer zip: ", info->zip, 10);
 
         dls_store(info, &start, &last);
+        printf("\nYour entry was saved.\n\n");
+
+        delay(1000);
+        break;
     }
 }
 
@@ -141,7 +146,7 @@ void inputs(char *prompt, char *s, int count){
  * @return void
  */
 void dls_store(struct address *i, struct address **start, struct address **last){
-    struct address *old, *p;
+    struct address *old, *p; /* buffer nodes */
 
     if(*last == NULL){ /* first element in list*/
         i->next = NULL;
@@ -335,11 +340,29 @@ void load(void){
     while(!feof(fp)){
         info = (struct address *)malloc(sizeof(struct address));
         if(!info){
-            pritf("Out of memory");
+            printf("Out of memory");
             return;
         }
         if(1 != fread(info, sizeof(struct address), 1, fp)) break;
+
         dls_store(info, &start, &last);
     }
     fclose(fp);
+}
+
+/**
+ * @brief time delay func
+ * 
+ * @param second 
+ * 
+ * @return void
+ */
+void delay(int second){
+
+int milsec = 1000 * second;
+
+clock_t startTime = clock();
+
+while(clock() < (startTime + milsec));
+
 }
