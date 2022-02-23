@@ -13,6 +13,7 @@ when started the program displays a menu of options from which the user can chos
     "6. Load the file\n"
     "7. Quit\n" 
     ```
+    
     ##
     
     while active the program saves the entries on dinamicly allocated memmory. 
