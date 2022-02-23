@@ -11,8 +11,8 @@ when started the program displays a menu of options from which the user can chos
     "4. Search\n"
     "5. Save the file\n"
     "6. Load the file\n"
-    "7. Quit\n"
-    ```
+    "7. Quit\n" ```
+    
     while active the program saves the entries on dinamicly allocated memmory. 
     If the `save` option is chosen from the menu it will create a binary file on which the entries will be saved.
     `load` is the other file function which will load an already existing binary disk file.
